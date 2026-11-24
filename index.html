@@ -132,7 +132,7 @@ section{padding:88px 0}
 .steps .n{font-family:var(--h);font-size:34px;line-height:1;color:#b0786a}
 .steps b{display:block;font-weight:500;font-size:17px}
 .steps span{font-size:16px;color:#5d5559}
-.mapart{position:relative;min-height:320px;border-radius:22px;overflow:hidden;background:#1a1719;aspect-ratio:1/1;box-shadow:0 30px 60px rgba(30,20,20,.18)}
+.mapart{position:relative;border-radius:22px;overflow:hidden;background:#1a1719;aspect-ratio:1/1;box-shadow:0 30px 60px rgba(30,20,20,.18)}
 @media(min-width:900px){.mapart{aspect-ratio:5/4}}
 .mapart svg{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%}
 .mapart .lbl{position:absolute;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);padding:6px 10px;border-radius:999px;backdrop-filter:blur(6px)}
@@ -194,7 +194,8 @@ section{padding:88px 0}
 .tile.park .big{position:absolute;right:24px;top:18px;font-family:var(--h);font-size:clamp(110px,16vw,180px);line-height:1;color:var(--rose);opacity:.9;z-index:2}
 .tile.park .big small{font-size:.3em;color:#fff;margin-left:6px}
 /* відгуки */
-.revs{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:40px;padding-bottom:10px;scrollbar-width:none}
+.revs{display:grid;gap:16px;margin-top:40px}
+@media(max-width:899px){.rev:nth-child(n+5){display:none}}
 .revs::-webkit-scrollbar{display:none}
 @media(min-width:900px){.revs{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}}
 .rev{scroll-snap-align:start;background:#fff;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--lined)}
@@ -250,7 +251,7 @@ section{padding:88px 0}
 @media(min-width:900px){.where{grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}}
 .addr{font-family:var(--h);font-size:30px;line-height:1.15;margin-top:18px}
 .where .acts{margin-top:22px}
-.mapbox{min-height:300px;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--paper2);border:1px solid var(--lined)}
+.mapbox{border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--paper2);border:1px solid var(--lined)}
 .mapbox iframe{width:100%;height:100%;border:0;display:block}
 /* faq */
 .faq{max-width:860px;margin:36px auto 0}
@@ -281,6 +282,7 @@ footer p+p{margin-top:6px}
 @media(min-width:900px){#bar{display:none}}
 #toast{position:fixed;z-index:90;left:50%;bottom:100px;transform:translate(-50%,20px);background:#fff;color:#1d1a1b;padding:14px 18px;border-radius:14px;max-width:min(92vw,460px);font-size:14.5px;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 14px 40px rgba(0,0,0,.35)}
 #toast.show{opacity:1;transform:translate(-50%,0)}
+@supports not (aspect-ratio:1/1){.mapart{height:340px}.mapbox{height:300px}.room .ph img{height:260px}}
 html:not(.js) .hbottom *{opacity:1!important;transform:none!important}
 .js .rv{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
 .rv.in{opacity:1;transform:none}
